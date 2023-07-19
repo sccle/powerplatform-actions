@@ -514,7 +514,7 @@ var require_importSolution = __commonJS({
           validator.pushInput(pacArgs, "--max-async-wait-time", parameters.maxAsyncWaitTimeInMin);
           validator.pushInput(pacArgs, "--activate-plugins", parameters.activatePlugins);
           if (((_a = validator.getInput(parameters.useDeploymentSettingsFile)) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === "true") {
-            validator.pushInput(pacArgs, "--settings-file", parameters.deploymentSettingsFile);
+            validator.pushInput(pacArgs, "--settings-file", parameters.deploymentSettingsFile, resolveFolder);
           }
           logger.log("Calling pac cli inputs: " + pacArgs.join(" "));
           const pacResult = yield pac(...pacArgs);
